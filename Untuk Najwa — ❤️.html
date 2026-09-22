@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/zami/Downloads/website_najwa_lebih_romantis/index.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Untuk Najwa — ❤️</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#09030d;color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% 20%,#3b1235 0,#17091d 35%,#070208 75%)}
+.noise{position:fixed;inset:0;opacity:.08;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 18px}
+.card{width:min(960px,94vw);text-align:center;padding:42px 24px;border:1px solid #ffffff22;border-radius:30px;background:#ffffff0b;backdrop-filter:blur(16px);box-shadow:0 25px 100px #0008}
+.kicker{letter-spacing:5px;text-transform:uppercase;font:12px Arial,sans-serif;color:#eab7d1}
+h1{font-size:clamp(48px,10vw,96px);line-height:.95;margin:15px 0}
+h1 em{font-style:normal;color:#ff91bd;text-shadow:0 0 35px #ff4d9d88}
+.lead{font-size:19px;line-height:1.7;color:#eee;max-width:650px;margin:0 auto 30px}
+.btn{border:0;border-radius:999px;padding:15px 24px;margin:7px;background:linear-gradient(135deg,#ff4f9b,#9b5cff);color:white;font-weight:bold;cursor:pointer;box-shadow:0 10px 30px #c64a9c55}
+.btn.dark{background:#ffffff12;border:1px solid #ffffff24}
+.hidden{display:none}
+#letter{max-width:700px;margin:35px auto 0;line-height:1.9;font-size:18px;color:#f9eaf1}
+.rose{font-size:44px;filter:drop-shadow(0 0 15px #ff4b9d);animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.video{width:100%;max-height:62vh;border-radius:22px;background:#000;box-shadow:0 20px 70px #000}
+.player{margin-top:25px}
+.now{font:13px Arial,sans-serif;color:#ffc2db;margin:10px}
+.bar{width:min(500px,90%);height:5px;background:#ffffff18;border-radius:5px;margin:12px auto;overflow:hidden}
+.fill{height:100%;width:0;background:#ff75ad}
+.ending{font-size:clamp(32px,6vw,60px);margin:20px 0}
+.heart{position:fixed;top:-30px;pointer-events:none;z-index:5;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--x),110vh) rotate(540deg);opacity:0}}
+.fade{animation:fade 1.5s ease both}@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="noise"></div>
+
+<section>
+<div class="card fade">
+  <div class="kicker">Ada sesuatu untukmu</div>
+  <div class="rose">🌹</div>
+  <h1>Untuk <em>Najwa</em></h1>
+  <p class="lead">Sebelum kamu melihat semuanya, izinkan aku menyampaikan satu hal kecil dari hati.</p>
+  <button class="btn" id="open">❤️ Surat terbuka</button>
+  <div id="letter" class="">
+    Aku mungkin tidak selalu menemukan kata-kata yang paling indah.<br>
+    Tapi kalau ada satu hal yang ingin aku pastikan kamu tahu,<br>
+    itu adalah...
+    <br><br><strong>kamu sangat berarti buat aku.</strong> ❤️
+    <br><br>
+    Sekarang, lihat sampai selesai ya.
+  </div>
+</div>
+</section>
+
+<section id="videoSection">
+<div class="card fade">
+  <div class="kicker">Untuk kamu</div>
+  <h2 style="font-size:34px">Satu video, satu perasaan. ❤️</h2>
+  <video class="video" id="video" controls="" playsinline="">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <div class="player">
+    <div class="now" id="now">🎵 Musik dijeda</div>
+    <div class="bar"><div class="fill" id="fill" style="width: 65.0144%;"></div></div>
+    <button class="btn" id="music">▶ Putar “Bunga Maaf”</button>
+    <button class="btn dark" id="love">💗 Tebarkan cinta</button>
+  </div>
+  <p style="opacity:.65;font:13px Arial,sans-serif">
+      .</p>
+</div>
+</section>
+
+<section>
+<div class="card fade">
+  <div class="rose">❤️</div>
+  <div class="kicker">Pesan terakhir</div>
+  <div class="ending">Aku sayang kamu, Najwa.</div>
+  <p class="lead">Semoga halaman kecil ini bisa membuatmu tersenyum, walaupun hanya sebentar.</p>
+  <button class="btn" onclick="loveRain()">💞 Untukmu</button>
+</div>
+</section>
+
+<audio id="audio" loop="">
+  <source src="bunga-maaf.mp4" type="audio/mp4">
+</audio>
+
+<script>
+const open=document.getElementById('open'),letter=document.getElementById('letter');
+open.onclick=async()=>{
+ letter.classList.remove('hidden'); open.textContent='❤️ Surat terbuka';
+ document.getElementById('videoSection').scrollIntoView({behavior:'smooth'});
+};
+const audio=document.getElementById('audio'),music=document.getElementById('music');
+const fill=document.getElementById('fill'),now=document.getElementById('now');
+music.onclick=async()=>{
+ if(audio.paused){
+   try{await audio.play();music.textContent='⏸ Jeda “Bunga Maaf”';now.textContent='🎵 Sedang memainkan Bunga Maaf';}
+   catch(e){alert('Browser memblokir pemutaran. Klik tombol sekali lagi.');}
+ }else{audio.pause();music.textContent='▶ Putar “Bunga Maaf”';now.textContent='🎵 Musik dijeda';}
+};
+audio.addEventListener('timeupdate',()=>{
+ if(audio.duration) fill.style.width=(audio.currentTime/audio.duration*100)+'%';
+});
+document.getElementById('love').onclick=loveRain;
+function loveRain(){for(let i=0;i<35;i++)drop(i%2?'❤️':'🌹')}
+function drop(s){
+ const x=document.createElement('div');x.className='heart';x.textContent=s;
+ x.style.left=Math.random()*100+'vw';x.style.setProperty('--x',(Math.random()*240-120)+'px');
+ x.style.animationDuration=(3+Math.random()*4)+'s';x.style.fontSize=(14+Math.random()*24)+'px';
+ document.body.appendChild(x);setTimeout(()=>x.remove(),8000);
+}
+setInterval(()=>{if(Math.random()>.45)drop('🌸')},1200);
+</script>
+
+<div class="heart" style="left: 0.82779vw; --x: 42.18444889588383px; animation-duration: 5.55451s; font-size: 21.8094px;">🌸</div><div class="heart" style="left: 34.4028vw; --x: 110.58988085532562px; animation-duration: 5.52231s; font-size: 18.7232px;">🌸</div></body></html>
